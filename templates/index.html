@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes and Volumes</title>
+    <style>
+        body {
+            background-color: #f5f5fe; /* Light lavender background color */
+            font-family: 'Arial', sans-serif;
+            text-align: left;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+select, input, button {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center; /* Center the text within input fields */
+    align: center; /* Center the text within input fields */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+        button {
+            background-color: #5e8c77; /* Elegant green color */
+            color: #fff; /* White text */
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function showFields() {
+            var shape = document.getElementById('shape').value;
+            var radius = document.getElementById('radius');
+            var sideLength = document.getElementById('side_length');
+            var baseLength = document.getElementById('base_length');
+            var height = document.getElementById('height');
+
+            // Hide all fields
+            radius.style.display = 'none';
+            sideLength.style.display = 'none';
+            baseLength.style.display = 'none';
+            height.style.display = 'none';
+
+            // Show relevant field based on selected shape
+            if (shape === 'Sphere') {
+                radius.style.display = 'block';
+                radius.style.align = 'center';
+                radiusLabel.style.display = 'block';
+            } else if (shape === 'Cube') {
+                sideLength.style.display = 'block';
+                sideLengthLabel.style.display = 'block';
+            } else if (shape === 'Pyramid') {
+                baseLength.style.display = 'block';
+                baseLengthLabel.style.display = 'block';
+                height.style.display = 'block';
+                heightLabel.style.display = 'block';
+            }
+
+            // Return false to prevent form submission
+            return false;
+        }
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <h1 align="center">Python-based ITS for Tutoring Volume Calculations for Various Shapes</h1>
+    <h2 align="center">Developed with Protege Ontology Editor</h2>
+    <form method="post" action="/" onsubmit="showFields()">
+        <label for="shape"><b>Select Shape:</b></label>
+        <select name="shape" id="shape" onchange="showFields()">
+            {% for shape in shapes %}
+                <option value="{{ shape }}">{{ shape }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="radius" id="radiusLabel" name="radiusLabel" style="display:none;">Radius:</label>
+        <input type="text" align="center" name="radius" id="radius" style="display:none;align:center;"><br>
+
+        <label for="side_length" name="sideLengthLabel" id="sideLengthLabel" style="display:none;">Side Length:</label>
+        <input type="text" align="center" name="side_length" id="side_length" style="display:none;align:center;"><br>
+
+        <label for="base_length" name="baseLengthLabel" id="baseLengthLabel" style="display:none;">Base Length:</label>
+        <input type="text" align="center" name="base_length" id="base_length" style="display:none;align:center;"><br>
+
+        <label for="height" name="heightLabel" id="heightLabel" style="display:none;">Height:</label>
+        <input type="text" align="center" name="height" id="height" style="display:none;align:center;"><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+<h2>Calculation Steps (Working Procedures)</h2>
+{% if volume_formula and volume %}
+    <p>2. Write the formula to be used: \( {{ volume_formula | safe }} \)</p>
+    <p>3. Illustrating the substitutions: \( {{ volume_formula_with_values | safe | replace('^', '^') }} \)</p>
+    <p>4. Finally, the answer is: {{ volume }}</p>
+{% endif %}
+
+</body>
+</html>
