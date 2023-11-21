@@ -1,0 +1,61 @@
+Prefix(:=<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4>
+
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation1>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation2>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation3>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Cube>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Pyrimid>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Shape>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Sphere>))
+Declaration(Class(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#VolumeCalculation>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: owl:topObjectProperty (owl:topObjectProperty)
+
+AnnotationAssertion(rdfs:comment owl:topObjectProperty "CalculationHasFormula")
+AnnotationAssertion(rdfs:comment owl:topObjectProperty "ShapeHasVolume")
+FunctionalObjectProperty(owl:topObjectProperty)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation1> (<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation1>)
+
+SubClassOf(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation1> <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#VolumeCalculation>)
+
+# Class: <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation2> (<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation2>)
+
+SubClassOf(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation2> <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#VolumeCalculation>)
+
+# Class: <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation3> (<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation3>)
+
+SubClassOf(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Calcutation3> <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#VolumeCalculation>)
+
+# Class: <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Cube> (<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Cube>)
+
+SubClassOf(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Cube> <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Shape>)
+
+# Class: <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Pyrimid> (<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Pyrimid>)
+
+SubClassOf(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Pyrimid> <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Shape>)
+
+# Class: <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Sphere> (<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Sphere>)
+
+SubClassOf(<http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Sphere> <http://www.semanticweb.org/intuito_pc/ontologies/2023/10/untitled-ontology-4#Shape>)
+
+
+)
