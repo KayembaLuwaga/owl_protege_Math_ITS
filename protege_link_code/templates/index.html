@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes and Volumes</title>
+</head>
+<body>
+    <h1>Shapes and Volumes</h1>
+    <form method="post" action="/">
+        <label for="shape">Select Shape:</label>
+        <select name="shape" id="shape">
+            {% for shape in shapes %}
+                <option value="{{ shape }}">{{ shape }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="radius">Radius:</label>
+        <input type="text" name="radius"><br>
+
+        <label for="side_length">Side Length:</label>
+        <input type="text" name="side_length"><br>
+
+        <label for="base_length">Base Length:</label>
+        <input type="text" name="base_length"><br>
+
+        <label for="height">Height:</label>
+        <input type="text" name="height"><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <h2>Working</h2>
+    {% if latex_steps %}
+        {% for step in latex_steps %}
+            <p>{{ step }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
